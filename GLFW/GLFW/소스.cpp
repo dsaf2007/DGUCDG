@@ -97,6 +97,16 @@ void drawthickLine(const int& i0, const int& j0, const int& i1, const int& j1, c
 	}
 }
 
+void fill(const int a, const int b, const int c, const int d, const int ay, const int by, const int cy, const int dy, const float& red, const float& green, const float& blue)
+{
+	for (int i = a; i <= c; i++)
+
+	{
+
+		drawLine(i, ay, i, by, 1.0f, 0.0f, 0.0f);
+	}
+}
+
 int main(void)
 {
 	GLFWwindow* window;
@@ -138,6 +148,9 @@ int main(void)
 		drawLine(301, 200, 399, 200, 1.0f, 0.0f, 0.0f);
 		drawLine(301, 100, 399, 100, 1.0f, 0.0f, 0.0f);
 		drawLine(400, 100, 400, 199, 1.0f, 0.0f, 0.0f);
+
+		//filled square
+		fill(300, 300, 400, 400, 300, 400, 300, 400, 1.0f, 0.0f, 0.0f);
 
 		//triagle
 		drawLine(101, 200, 179, 200, 1.0f, 0.0f, 0.0f);
