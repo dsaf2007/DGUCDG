@@ -3,7 +3,7 @@
 
 const int width = 500;
 
-const int height =  500;
+const int height = 500;
 
 
 
@@ -51,7 +51,7 @@ void drawLine(const int& i0, const int& j0, const int& i1, const int& j1, const 
 
 			drawPixel(i, j, red, green, blue);
 		}
-	}if(i0!=i1&&j0!=j1)
+	}if (i0 != i1&&j0 != j1)
 	{
 		for (int i = i0; i <= i1; i++)
 
@@ -93,11 +93,12 @@ int main(void)
 		glClear(GL_COLOR_BUFFER_BIT);
 		std::fill_n(pixels, width*height * 3, 1.0f);
 
-	
-		
-		
-
-	
+		drawLine(100, 100, 129, 139, 1.0f, 0.0f, 0.0f);
+		drawLine(130, 140, 179, 140, 1.0f, 0.0f, 0.0f);
+		drawLine(101, 99, 129, 61, 1.0f, 0.0f, 0.0f);
+		drawLine(130, 60, 179, 60, 1.0f, 0.0f, 0.0f);
+		drawLine(180, 61, 209, 99, 1.0f, 0.0f, 0.0f);
+		drawLine(180, 139, 210, 100, 1.0f, 0.0f, 0.0f);
 
 		glDrawPixels(width, height, GL_RGB, GL_FLOAT, pixels);
 
