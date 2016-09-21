@@ -66,6 +66,36 @@ void drawLine(const int& i0, const int& j0, const int& i1, const int& j1, const 
 	}
 
 }
+void drawthickLine(const int& i0, const int& j0, const int& i1, const int& j1, const float& red, const float& green, const float& blue)
+{
+	for (int i = i0; i <= i1; i++)
+
+	{
+
+		const int j = (j1 - j0)*(i - i0) / (i1 - i0) + j0;
+
+
+		drawPixel(i, j, red, green, blue);
+	}
+	for (int i = i0; i <= i1; i++)
+
+	{
+
+		const int j = (j1 - j0)*(i - i0) / (i1 - i0) + j0;
+
+
+		drawPixel(i+1, j, red, green, blue);
+	}
+	for (int i = i0; i <= i1; i++)
+
+	{
+
+		const int j = (j1 - j0)*(i - i0) / (i1 - i0) + j0;
+
+
+		drawPixel(i-1, j, red, green, blue);
+	}
+}
 
 int main(void)
 {
@@ -93,12 +123,30 @@ int main(void)
 		glClear(GL_COLOR_BUFFER_BIT);
 		std::fill_n(pixels, width*height * 3, 1.0f);
 
+		//draw thick
+		drawthickLine(1, 0, 50, 50, 1.0f, 0.0f,0.0f);
+		//pentagon
 		drawLine(100, 100, 129, 139, 1.0f, 0.0f, 0.0f);
 		drawLine(130, 140, 179, 140, 1.0f, 0.0f, 0.0f);
 		drawLine(101, 99, 129, 61, 1.0f, 0.0f, 0.0f);
 		drawLine(130, 60, 179, 60, 1.0f, 0.0f, 0.0f);
 		drawLine(180, 61, 209, 99, 1.0f, 0.0f, 0.0f);
 		drawLine(180, 139, 210, 100, 1.0f, 0.0f, 0.0f);
+
+		//square
+		drawLine(300, 100, 300, 200, 1.0f, 0.0f, 0.0f);
+		drawLine(301, 200, 399, 200, 1.0f, 0.0f, 0.0f);
+		drawLine(301, 100, 399, 100, 1.0f, 0.0f, 0.0f);
+		drawLine(400, 100, 400, 199, 1.0f, 0.0f, 0.0f);
+
+		//triagle
+		drawLine(101, 200, 179, 200, 1.0f, 0.0f, 0.0f);
+		drawLine(100, 200, 149, 230, 1.0f, 0.0f, 0.0f);
+		drawLine(150, 230, 180, 200, 1.0f, 0.0f, 0.0f);
+
+
+
+
 
 		glDrawPixels(width, height, GL_RGB, GL_FLOAT, pixels);
 
