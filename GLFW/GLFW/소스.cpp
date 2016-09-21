@@ -93,13 +93,13 @@ int main(void)
 		glClear(GL_COLOR_BUFFER_BIT);
 		std::fill_n(pixels, width*height * 3, 1.0f);
 
-		drawLine(100, 100, 100, 200, 1.0f, 0.0f, 0.0f);
-		drawLine(100, 200, 199, 200, 1.0f, 0.0f, 0.0f);
-		drawLine(101, 100, 199, 100, 1.0f, 0.0f, 0.0f);
+	
+		
+		drawLine(101, 100, 179, 100, 1.0f, 0.0f, 0.0f);
+		drawLine(100, 100, 149, 130, 1.0f, 0.0f, 0.0f);
+		drawLine(150, 130, 180, 100, 1.0f, 0.0f,0.0f);
 
-		drawLine(200, 100, 200, 199, 1.0f, 0.0f, 0.0f);
-
-
+	
 
 		glDrawPixels(width, height, GL_RGB, GL_FLOAT, pixels);
 
