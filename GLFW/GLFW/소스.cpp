@@ -158,40 +158,48 @@ int main(void)
 		std::fill_n(pixels, width*height * 3, 1.0f);
 
 		//draw thick
-		drawthickLine(1, 0, 50, 50, 1.0f, 0.0f,0.0f);
-		//pentagon
-		drawLine(100, 100, 129, 139, 1.0f, 0.0f, 0.0f);
-		drawLine(130, 140, 179, 140, 1.0f, 0.0f, 0.0f);
-		drawLine(101, 99, 129, 61, 1.0f, 0.0f, 0.0f);
-		drawLine(130, 60, 179, 60, 1.0f, 0.0f, 0.0f);
-		drawLine(180, 61, 209, 99, 1.0f, 0.0f, 0.0f);
-		drawLine(180, 139, 210, 100, 1.0f, 0.0f, 0.0f);
+		drawthickLine(1, 100, 50, 150, 1.0f, 0.0f,0.0f);
+
 
 		//square
-		drawLine(300, 100, 300, 200, 1.0f, 0.0f, 0.0f);
-		drawLine(301, 200, 399, 200, 1.0f, 0.0f, 0.0f);
-		drawLine(301, 100, 399, 100, 1.0f, 0.0f, 0.0f);
-		drawLine(400, 100, 400, 199, 1.0f, 0.0f, 0.0f);
+		drawLine(100, 100, 100, 200, 1.0f, 0.0f, 0.0f);
+		drawLine(101, 200, 199, 200, 1.0f, 0.0f, 0.0f);
+		drawLine(101, 100, 199, 100, 1.0f, 0.0f, 0.0f);
+		drawLine(200, 100, 200, 199, 1.0f, 0.0f, 0.0f);
 
-		//filled square
-		fill(300, 300, 400, 400, 300, 400, 300, 400, 1.0f, 0.0f, 0.0f);
+//filled square
+		fill(250, 250, 350, 350, 100, 200, 100, 200, 1.0f, 0.0f, 0.0f);
+
+
 
 		//triagle
-		drawLine(101, 200, 179, 200, 1.0f, 0.0f, 0.0f);
-		drawLine(100, 200, 149, 230, 1.0f, 0.0f, 0.0f);
-		drawLine(150, 230, 180, 200, 1.0f, 0.0f, 0.0f);
+		drawLine(101, 300, 179, 300, 1.0f, 0.0f, 0.0f);
+		drawLine(100, 300, 149, 330, 1.0f, 0.0f, 0.0f);
+		drawLine(150, 330, 180, 300, 1.0f, 0.0f, 0.0f);
+
+		//pentagon
+		drawLine(200, 300, 229, 339, 1.0f, 0.0f, 0.0f);
+		drawLine(230, 340, 279, 340, 1.0f, 0.0f, 0.0f);
+		drawLine(201, 299, 229, 261, 1.0f, 0.0f, 0.0f);
+		drawLine(230, 260, 279, 260, 1.0f, 0.0f, 0.0f);
+		drawLine(280, 261, 309, 299, 1.0f, 0.0f, 0.0f);
+		drawLine(280, 339, 310, 300, 1.0f, 0.0f, 0.0f);
+
+		
 
 		//circle
 		for (int i = 0; i < 10000000; i++)
 		{
-			double x = GetRand(100, 300);
+			double x = GetRand(280, 480);
 			double y = GetRand(200, 400);
 
 
-			if (insidecir(x, y,200,300,50 ) == true)
+			if (insidecir(x, y, 380, 300, 50) == true)
 				drawPixel((int)x, (int)y, 1.0f, 0.0f, 0.0f);
 
 		}
+
+
 
 
 
