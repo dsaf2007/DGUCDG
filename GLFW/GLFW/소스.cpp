@@ -1,5 +1,7 @@
 #include <GLFW/glfw3.h>
 #include <algorithm>
+#include <stdlib.h>
+#include <time.h>
 
 const int width = 500;
 
@@ -9,6 +11,26 @@ const int height = 500;
 
 float* pixels = new float[width*height * 3];
 
+bool insidecir(const double x, const double y,const int x_c,const int y_c,const int r)
+{
+
+
+
+	const double f = (x - x_c)*(x - x_c) + (y - y_c)*(y - y_c) - r*r;
+	if (f>=0.0&&f<90.0)return true;
+	else return false;
+}
+
+int GetRand(double min, double max)
+{
+	double temp = (double)rand() / (double)RAND_MAX;
+
+
+	temp = min + (max - min)*temp;
+
+
+	return temp;
+}
 
 
 void drawPixel(const int& i, const int& j, const float& red, const float& green, const float& blue)
@@ -107,6 +129,8 @@ void fill(const int a, const int b, const int c, const int d, const int ay, cons
 	}
 }
 
+
+
 int main(void)
 {
 	GLFWwindow* window;
@@ -156,6 +180,20 @@ int main(void)
 		drawLine(101, 200, 179, 200, 1.0f, 0.0f, 0.0f);
 		drawLine(100, 200, 149, 230, 1.0f, 0.0f, 0.0f);
 		drawLine(150, 230, 180, 200, 1.0f, 0.0f, 0.0f);
+
+		//circle
+		for (int i = 0; i < 10000000; i++)
+		{
+			double x = GetRand(100, 300);
+			double y = GetRand(200, 400);
+
+
+			if (insidecir(x, y,200,300,50 ) == true)
+				drawPixel((int)x, (int)y, 1.0f, 0.0f, 0.0f);
+
+		}
+
+
 
 
 
